@@ -1,1 +1,7 @@
-This is all very new stuff! It can make a character that walks around but little more, for now.
+ScummPy will eventually allow the creation of SCUMM type games with PyGame! I've seen another project on the same subject, but it wasn't as far along as mine, was dead, and also had a lot of stuff that looked less like necessary code and more like "libraries dragged in because they'll probably be useful".
+
+While parts of this are stubs, everything here should be useful for making a game.  More importantly, there's a demo game that is already as far as a character that can walk around the environment and behind things, etc.
+
+ScummPy requires Python and PyGame to run, and doesn't make any efforts to "hide" the purpose of the resources. A player will definitely be able to "cheat" at your games, but the philosophy of ScummPy is that this is less like "cutting in line" and more like "reading the last page of the book".
+
+When I get around to it, I'll put some documentation on how to set up a game, but if you have some experience with programming, playing the demo game (and looking at the configuration files and game resources) should pretty much teach you everything you need to know.
