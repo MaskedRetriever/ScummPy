@@ -1,6 +1,8 @@
 Startroom 003
 StartX 50
 StartY 120
+TalkX 16
+TalkY -90
 Speed 4
 Layer 3
 SizeX 32
@@ -10,3 +12,4 @@ WalkLeftRow 3
 WalkRightRow 0
 WalkUpRow 2
 WalkDownRow 1
+FontFile font_2.png

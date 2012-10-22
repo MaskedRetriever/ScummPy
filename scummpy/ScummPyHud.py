@@ -12,7 +12,7 @@ class GUI:
 		self.imGUI = pygame.image.load(ResourcePath + "GUI.png")
 		self.imGUI.set_colorkey((255,0,255))
 		self.Arial = Textify.BlitFont(ResourcePath + "font_1.png")
-		self.State = "Walk to"
+		self.State = "inactive"
 		self.GUIOffset = GUIOffset
 	
 	def Display(self, imDest):		

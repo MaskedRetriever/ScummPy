@@ -9,7 +9,6 @@ class Room:
 	def __init__(self, ResourcePath="resources/", RoomName="002"):
 		self.ResourcePath = ResourcePath
 		self.RoomName = RoomName
-		self.roomsFP = open(self.ResourcePath + "rooms.scd", "r")
 
 		#Assign Special Layers
 		self.imWM = pygame.image.load(self.ResourcePath + "rooms/" + RoomName + "/room" + RoomName + "_walkmask.png")
@@ -27,17 +26,9 @@ class Room:
 			self.imLayers.append(pygame.image.load(self.ResourcePath + "rooms/" + RoomName + "/" + imName))
 		
 
-		#Set up exits
+		#Set up exit hook (Designer must append exits from main!)
 		self.Exits = [Exit()]
-		for line in self.roomsFP:
-			if len(line)>0:
-				words = line.split()
-				if (len(words)==11):
-					#print(words)
-					if(words[2]==self.RoomName):
-						self.Exits.append(Exit(int(words[4]),words[6],(int(words[8]),int(words[10]))))
-						#print(words[4] + " " + words[6] + " " + words[8])
-		self.roomsFP.close()
+
 
 		self.Animations=dict()
 	

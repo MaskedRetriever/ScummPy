@@ -4,6 +4,7 @@ from pygame.locals import *
 
 import ScummPyUtils
 import ScummPyAnimation
+import Textify
 
 class Character:
 	
@@ -40,6 +41,12 @@ class Character:
 					self.SizeX = int(words[1])
 				if words[0] == 'SizeY':
 					self.SizeY = int(words[1])
+				if words[0] == 'FontFile':
+					self.FontFile = words[1]
+				if words[0] == 'TalkX':
+					self.TalkX = int(words[1])
+				if words[0] == 'TalkY':
+					self.TalkY = int(words[1])
 
 
 		charFP.close()		
@@ -56,6 +63,7 @@ class Character:
 		self.SheetY=0
 		self.WalkStep=0
 	
+		#Masks and Sprite Sheet
 		self.imPlayer =  pygame.image.load(self.ResourcePath + "characters/" + CharacterName + "/" + CharacterName + "Scale.png")
 		self.imLayer = pygame.image.load(ResourcePath + "rooms/" + self.Startroom + "/room" + self.Startroom + "_layers.png")
 		self.imWM = pygame.image.load(ResourcePath + "rooms/" + self.Startroom + "/room" + self.Startroom + "_walkmask.png")
@@ -64,6 +72,11 @@ class Character:
 		#This is a "hook" for allowing the main.py to attach animations to a character.
 		#Display code will need to be updated to add it...
 		self.Animations = dict()
+
+		#Speaking setup
+		self.TalkFont = Textify.BlitFont(ResourcePath + self.FontFile)
+		self.SayString = ""
+		self.TicsToTalk = 0
 
 	
 	def GoTo(self, destRoom, coords):
@@ -137,7 +150,15 @@ class Character:
 		
 		self.imPlayer.blit(self.imSheet,(-self.SheetX,-self.SheetY))
 		imOutPut.blit(pygame.transform.scale(self.imPlayer,(int(self.SizeX*self.scale),int(self.SizeY*self.scale))), (self.x-int(Middle*self.scale),self.y-int(self.SizeY*self.scale)))
+		if self.TicsToTalk > 0:
+			self.TalkFont.BlitTextCenter(imOutPut,(self.pos[0]+self.TalkX,self.pos[1]+self.TalkY),self.SayString)
+			self.TicsToTalk -= 1
 		
 	def SetWalkMask(self, newWalkMask):
 		self.imWM.fill((0,0,0))
 		self.imWM.blit(newWalkMask,(0,0))
+
+	def Say(self, inputString = "!!!", duration = "15"):
+		self.TicsToTalk = duration
+		self.SayString = inputString
+
