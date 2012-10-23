@@ -6,10 +6,11 @@ from pygame.locals import *
 sys.path.append('scummpy')
 import ScummPy
 
+
 ScummGame = ScummPy.Game()
 ScummGame.PlayerChar = 'sissy'
 
-GameScaleFactor = 2.5
+GameScaleFactor = 2
 
 wRect = (320,200)
 oRect = (int(320*GameScaleFactor),int(200*GameScaleFactor))
@@ -34,19 +35,20 @@ def Main():
 	
 
 
-	#ScummPy Setup! All game attributes go here! Eventually this might get really
-	# long, necessitating breaking it out to a user-defined library, but for simple
-	# games it might be just a couple pages.
+	#ScummPy Setup! All non-scd attributes go here!
 	pygame.init()
 
 	ScummGame.rooms['002'].Exits.append(ScummPy.ScummPyRoom.Exit(1,'003',(50,120)))
 	ScummGame.rooms['003'].Exits.append(ScummPy.ScummPyRoom.Exit(1,'002',(300,120)))
 	ScummGame.rooms['003'].Exits.append(ScummPy.ScummPyRoom.Exit(2,'left',(45,75)))
 	ScummGame.rooms['left'].Exits.append(ScummPy.ScummPyRoom.Exit(2,'003',(300,120)))
-	
 
+	#Set up an animation (Note, move to .scd files.)
+	ScummGame.characters["sissy"].Animations["fall"]=ScummPy.ScummPyAnimation.Animation(pygame.image.load("resources/animations/sissyfallsheet.png"), 100, 100, -8, 25, 8, 1, False)
+	ScummGame.characters["sissy"].Animations["fall"].Running=True
+	ScummGame.characters["sissy"].SheetY = ScummGame.characters["sissy"].WalkDownRow*ScummGame.characters["sissy"].SizeY
 	
-	ScummGame.characters["sissy"].Say("WELP.  Here we go.", 20)
+	ScummGame.characters["sissy"].Say("WELP.  Here we go.", 40)
 
 	going = True
 	while going:

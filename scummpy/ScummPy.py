@@ -7,6 +7,7 @@ import ScummPyRoom
 import ScummPyUtils
 import ScummPyCharacter
 import ScummPyHud
+import ScummPyAnimation
 
 class Game:
 	def __init__(self,ResourcePath="resources/",StartRoom="002"):
@@ -60,6 +61,7 @@ class Game:
 			print(ExitCheck.roomdest)
 			self.RoomSelect=ExitCheck.roomdest
 			self.characters[self.PlayerChar].GoTo(self.rooms[self.RoomSelect],ExitCheck.coords)
+			self.characters[self.PlayerChar].Update()
 		
 	
 	def Click(self, pos):

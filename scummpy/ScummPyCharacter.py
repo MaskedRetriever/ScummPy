@@ -148,8 +148,17 @@ class Character:
 		
 		Middle = self.SizeX/2
 		
-		self.imPlayer.blit(self.imSheet,(-self.SheetX,-self.SheetY))
-		imOutPut.blit(pygame.transform.scale(self.imPlayer,(int(self.SizeX*self.scale),int(self.SizeY*self.scale))), (self.x-int(Middle*self.scale),self.y-int(self.SizeY*self.scale)))
+		#Animation Handling
+		AnyAnimationOn=False
+		for k,Anim in self.Animations.iteritems():
+			if Anim.Running:
+				AnyAnimationOn=True
+				Anim.Display(imOutPut,(0,0))
+
+
+		if not AnyAnimationOn:
+			self.imPlayer.blit(self.imSheet,(-self.SheetX,-self.SheetY))
+			imOutPut.blit(pygame.transform.scale(self.imPlayer,(int(self.SizeX*self.scale),int(self.SizeY*self.scale))), (self.x-int(Middle*self.scale),self.y-int(self.SizeY*self.scale)))
 		if self.TicsToTalk > 0:
 			self.TalkFont.BlitTextCenter(imOutPut,(self.pos[0]+self.TalkX,self.pos[1]+self.TalkY),self.SayString)
 			self.TicsToTalk -= 1
