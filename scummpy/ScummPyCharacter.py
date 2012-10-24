@@ -62,6 +62,8 @@ class Character:
 		self.SheetX=0
 		self.SheetY=0
 		self.WalkStep=0
+
+		self.blitRect = pygame.Rect(0,0,self.SizeX,self.SizeY)
 	
 		#Masks and Sprite Sheet
 		self.imPlayer =  pygame.image.load(self.ResourcePath + "characters/" + CharacterName + "/" + CharacterName + "Scale.png")
@@ -159,6 +161,10 @@ class Character:
 		if not AnyAnimationOn:
 			self.imPlayer.blit(self.imSheet,(-self.SheetX,-self.SheetY))
 			imOutPut.blit(pygame.transform.scale(self.imPlayer,(int(self.SizeX*self.scale),int(self.SizeY*self.scale))), (self.x-int(Middle*self.scale),self.y-int(self.SizeY*self.scale)))
+			#self.blitRect.left = self.SheetX
+			#self.blitRect.top = self.SheetY
+			#imOutPut.blit(pygame.transform.scale(self.imSheet,(int(self.SizeX*self.scale),int(self.SizeY*self.scale))), (self.x-int(Middle*self.scale),self.y-int(self.SizeY*self.scale)),self.blitRect)
+
 		if self.TicsToTalk > 0:
 			self.TalkFont.BlitTextCenter(imOutPut,(self.pos[0]+self.TalkX,self.pos[1]+self.TalkY),self.SayString)
 			self.TicsToTalk -= 1

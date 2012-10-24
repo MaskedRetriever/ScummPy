@@ -8,6 +8,7 @@ import ScummPyUtils
 import ScummPyCharacter
 import ScummPyHud
 import ScummPyAnimation
+import Textify
 
 class Game:
 	def __init__(self,ResourcePath="resources/",StartRoom="002"):
@@ -26,6 +27,7 @@ class Game:
 		for charname in os.listdir(ResourcePath + "characters"):
 			self.characters[charname]=ScummPyCharacter.Character(self.ResourcePath,charname)
 
+		self.DebugDisplay = False
 	
 
 		settingsFP = open(self.ResourcePath + "gamesettings.scd", "r")
@@ -38,8 +40,10 @@ class Game:
 					self.GUIOffsetY = int(words[1])
 				if words[0] == 'PlayerChar':
 					self.PlayerChar = words[1]
+				if words[0] == 'DebugFont':
+					self.FontFile = words[1]
 		settingsFP.close()      
-
+		self.DebugFont = Textify.BlitFont(ResourcePath + self.FontFile)
 
 		self.RoomSelect=self.characters[self.PlayerChar].Startroom
 	
@@ -52,6 +56,12 @@ class Game:
 	def Display(self, surf):
 		self.rooms[self.RoomSelect].Display(surf,self.characters)
 		self.GameGUI.Display(surf)
+
+		if self.DebugDisplay:
+			DebugString1 = "X: " + str(int(self.characters[self.PlayerChar].x)) 
+			DebugString1 += " Y: " + str(int(self.characters[self.PlayerChar].y))
+			self.DebugFont.BlitText(surf,(0,0),DebugString1)
+
 		
 	def Update(self):
 		self.characters[self.PlayerChar].Update()

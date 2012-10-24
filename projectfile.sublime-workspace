@@ -11,7 +11,7 @@
 			"file": "scummpy/ScummPyCharacter.py",
 			"settings":
 			{
-				"buffer_size": 5398,
+				"buffer_size": 5723,
 				"line_ending": "Windows"
 			}
 		},
@@ -19,15 +19,23 @@
 			"file": "demogame.py",
 			"settings":
 			{
-				"buffer_size": 2321,
+				"buffer_size": 2250,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/projects/scummpy/blttests.py",
+			"settings":
+			{
+				"buffer_size": 1161,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "scummpy/ScummPy.py",
 			"settings":
 			{
-				"buffer_size": 2397,
+				"buffer_size": 2835,
 				"line_ending": "Windows"
 			}
 		},
@@ -35,7 +43,7 @@
 			"file": "scummpy/ScummPyAnimation.py",
 			"settings":
 			{
-				"buffer_size": 1054,
+				"buffer_size": 995,
 				"line_ending": "Windows"
 			}
 		},
@@ -44,6 +52,14 @@
 			"settings":
 			{
 				"buffer_size": 1833,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/gamesettings.scd",
+			"settings":
+			{
+				"buffer_size": 65,
 				"line_ending": "Windows"
 			}
 		}
@@ -130,7 +146,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -138,15 +154,15 @@
 					"file": "scummpy/ScummPyCharacter.py",
 					"settings":
 					{
-						"buffer_size": 5398,
+						"buffer_size": 5723,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3882,
-								3923
+								2345,
+								2407
 							]
 						],
 						"settings":
@@ -155,7 +171,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1620.0,
+						"translation.y": 495.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -165,15 +181,15 @@
 					"file": "demogame.py",
 					"settings":
 					{
-						"buffer_size": 2321,
+						"buffer_size": 2250,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1691,
-								1691
+								814,
+								814
 							]
 						],
 						"settings":
@@ -182,25 +198,52 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 289.0,
+						"translation.y": 270.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "scummpy/ScummPy.py",
+					"file": "/E/projects/scummpy/blttests.py",
 					"settings":
 					{
-						"buffer_size": 2397,
+						"buffer_size": 1161,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								179,
-								179
+								727,
+								727
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 19.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "scummpy/ScummPy.py",
+					"settings":
+					{
+						"buffer_size": 2835,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1836,
+								1836
 							]
 						],
 						"settings":
@@ -210,25 +253,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 135.0,
+						"translation.y": 540.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "scummpy/ScummPyAnimation.py",
 					"settings":
 					{
-						"buffer_size": 1054,
+						"buffer_size": 995,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1051,
-								1051
+								833,
+								833
 							]
 						],
 						"settings":
@@ -243,7 +286,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "scummpy/ScummPyRoom.py",
 					"settings":
 					{
@@ -265,6 +308,32 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "resources/gamesettings.scd",
+					"settings":
+					{
+						"buffer_size": 65,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								61,
+								61
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

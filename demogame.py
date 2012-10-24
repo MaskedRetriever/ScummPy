@@ -38,6 +38,8 @@ def Main():
 	#ScummPy Setup! All non-scd attributes go here!
 	pygame.init()
 
+	ScummGame.DebugDisplay = True
+
 	ScummGame.rooms['002'].Exits.append(ScummPy.ScummPyRoom.Exit(1,'003',(50,120)))
 	ScummGame.rooms['003'].Exits.append(ScummPy.ScummPyRoom.Exit(1,'002',(300,120)))
 	ScummGame.rooms['003'].Exits.append(ScummPy.ScummPyRoom.Exit(2,'left',(45,75)))
