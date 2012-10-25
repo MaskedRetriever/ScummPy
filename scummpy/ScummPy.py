@@ -60,7 +60,8 @@ class Game:
 		if self.DebugDisplay:
 			DebugString1 = "X: " + str(int(self.characters[self.PlayerChar].x)) 
 			DebugString1 += " Y: " + str(int(self.characters[self.PlayerChar].y))
-			self.DebugFont.BlitText(surf,(0,0),DebugString1)
+			self.DebugFont.BlitText(surf,(1,1),DebugString1)
+			#surf.blit(self.characters[self.PlayerChar].imSheet,(200,0),self.characters[self.PlayerChar].blitRect)
 
 		
 	def Update(self):

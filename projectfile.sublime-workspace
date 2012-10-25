@@ -11,7 +11,7 @@
 			"file": "scummpy/ScummPyCharacter.py",
 			"settings":
 			{
-				"buffer_size": 5723,
+				"buffer_size": 5721,
 				"line_ending": "Windows"
 			}
 		},
@@ -35,7 +35,7 @@
 			"file": "scummpy/ScummPy.py",
 			"settings":
 			{
-				"buffer_size": 2835,
+				"buffer_size": 2941,
 				"line_ending": "Windows"
 			}
 		},
@@ -146,7 +146,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -154,15 +154,15 @@
 					"file": "scummpy/ScummPyCharacter.py",
 					"settings":
 					{
-						"buffer_size": 5723,
+						"buffer_size": 5721,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2345,
-								2407
+								4907,
+								4907
 							]
 						],
 						"settings":
@@ -171,7 +171,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 495.0,
+						"translation.y": 2070.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -235,15 +235,15 @@
 					"file": "scummpy/ScummPy.py",
 					"settings":
 					{
-						"buffer_size": 2835,
+						"buffer_size": 2941,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1836,
-								1836
+								1893,
+								1893
 							]
 						],
 						"settings":
@@ -253,7 +253,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 540.0,
+						"translation.y": 585.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -307,7 +307,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

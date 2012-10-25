@@ -161,8 +161,8 @@ class Character:
 		if not AnyAnimationOn:
 			self.imPlayer.blit(self.imSheet,(-self.SheetX,-self.SheetY))
 			imOutPut.blit(pygame.transform.scale(self.imPlayer,(int(self.SizeX*self.scale),int(self.SizeY*self.scale))), (self.x-int(Middle*self.scale),self.y-int(self.SizeY*self.scale)))
-			#self.blitRect.left = self.SheetX
-			#self.blitRect.top = self.SheetY
+			self.blitRect.left = self.SheetX
+			self.blitRect.top = self.SheetY
 			#imOutPut.blit(pygame.transform.scale(self.imSheet,(int(self.SizeX*self.scale),int(self.SizeY*self.scale))), (self.x-int(Middle*self.scale),self.y-int(self.SizeY*self.scale)),self.blitRect)
 
 		if self.TicsToTalk > 0:
