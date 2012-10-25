@@ -21,6 +21,8 @@ class Room:
 		imNamesInDir.remove("room" + RoomName + "_walkmask.png")
 		imNamesInDir.remove("room" + RoomName + "_layers.png")
 		imNamesInDir.remove("room" + RoomName + "_hotspots.png")
+		
+		imNamesInDir.sort()
 
 		for imName in imNamesInDir:
 			self.imLayers.append(pygame.image.load(self.ResourcePath + "rooms/" + RoomName + "/" + imName))
