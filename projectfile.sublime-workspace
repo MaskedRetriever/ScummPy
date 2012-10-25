@@ -19,16 +19,8 @@
 			"file": "demogame.py",
 			"settings":
 			{
-				"buffer_size": 2250,
+				"buffer_size": 2272,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/E/projects/scummpy/blttests.py",
-			"settings":
-			{
-				"buffer_size": 1161,
-				"line_ending": "Unix"
 			}
 		},
 		{
@@ -51,7 +43,7 @@
 			"file": "scummpy/ScummPyRoom.py",
 			"settings":
 			{
-				"buffer_size": 1833,
+				"buffer_size": 1859,
 				"line_ending": "Windows"
 			}
 		},
@@ -92,6 +84,7 @@
 	},
 	"file_history":
 	[
+		"/E/projects/scummpy/blttests.py",
 		"/E/projects/scummpy/GitHubRepo/resources/characters/sissy/sissy.scd",
 		"/E/projects/scummpy/GitHubRepo/scummpy/ScummPyHud.py",
 		"/E/projects/scummpy/GitHubRepo/scummpy/ScummPyRoom.py",
@@ -146,7 +139,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -171,7 +164,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2070.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -181,15 +174,15 @@
 					"file": "demogame.py",
 					"settings":
 					{
-						"buffer_size": 2250,
+						"buffer_size": 2272,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								814,
-								814
+								1400,
+								1400
 							]
 						],
 						"settings":
@@ -198,40 +191,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 270.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/E/projects/scummpy/blttests.py",
-					"settings":
-					{
-						"buffer_size": 1161,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								727,
-								727
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 19.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": "scummpy/ScummPy.py",
 					"settings":
 					{
@@ -259,7 +225,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "scummpy/ScummPyAnimation.py",
 					"settings":
 					{
@@ -286,19 +252,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "scummpy/ScummPyRoom.py",
 					"settings":
 					{
-						"buffer_size": 1833,
+						"buffer_size": 1859,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								883,
+								883
 							]
 						],
 						"settings":
@@ -313,7 +279,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "resources/gamesettings.scd",
 					"settings":
 					{

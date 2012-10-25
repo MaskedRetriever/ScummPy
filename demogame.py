@@ -47,6 +47,8 @@ def Main():
 
 	#Set up an animation (Note, move to .scd files.)
 	ScummGame.characters["sissy"].Animations["fall"]=ScummPy.ScummPyAnimation.Animation(pygame.image.load("resources/animations/sissyfallsheet.png"), 100, 100, -8, 25, 8, 1, False)
+	
+	#Run the animation
 	ScummGame.characters["sissy"].Animations["fall"].Running=True
 	ScummGame.characters["sissy"].SheetY = ScummGame.characters["sissy"].WalkDownRow*ScummGame.characters["sissy"].SizeY
 	
