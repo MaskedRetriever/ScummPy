@@ -21,8 +21,11 @@ class Room:
 		imNamesInDir.remove("room" + RoomName + "_walkmask.png")
 		imNamesInDir.remove("room" + RoomName + "_layers.png")
 		imNamesInDir.remove("room" + RoomName + "_hotspots.png")
+		imNamesInDir.remove("room"+ RoomName + ".scd")
 		
 		imNamesInDir.sort()
+
+		
 
 		for imName in imNamesInDir:
 			self.imLayers.append(pygame.image.load(self.ResourcePath + "rooms/" + RoomName + "/" + imName))
@@ -30,6 +33,18 @@ class Room:
 
 		#Set up exit hook (Designer must append exits from main!)
 		self.Exits = [Exit()]
+
+		self.HotSpots = dict()
+
+		settingsFP = open(self.ResourcePath + "rooms/" + RoomName + "/room" + RoomName + ".scd", "r")
+		for line in settingsFP:
+			if len(line)>0:
+				words = line.split()
+				if words[0] == 'Exit':
+					self.Exits.append(Exit(int(words[1]),words[2],(int(words[3]),int(words[4]))))
+				if words[0] == 'Hotspot':
+					self.HotSpots[int(words[1])]=words[2]
+		settingsFP.close()      
 
 
 		self.Animations=dict()

@@ -40,10 +40,10 @@ def Main():
 
 	ScummGame.DebugDisplay = True
 
-	ScummGame.rooms['002'].Exits.append(ScummPy.ScummPyRoom.Exit(1,'003',(50,120)))
-	ScummGame.rooms['003'].Exits.append(ScummPy.ScummPyRoom.Exit(1,'002',(300,120)))
-	ScummGame.rooms['003'].Exits.append(ScummPy.ScummPyRoom.Exit(2,'left',(45,75)))
-	ScummGame.rooms['left'].Exits.append(ScummPy.ScummPyRoom.Exit(2,'003',(300,120)))
+	#ScummGame.rooms['002'].Exits.append(ScummPy.ScummPyRoom.Exit(1,'003',(50,120)))
+	#ScummGame.rooms['003'].Exits.append(ScummPy.ScummPyRoom.Exit(1,'002',(300,120)))
+	#ScummGame.rooms['003'].Exits.append(ScummPy.ScummPyRoom.Exit(2,'left',(45,75)))
+	#ScummGame.rooms['left'].Exits.append(ScummPy.ScummPyRoom.Exit(2,'003',(300,120)))
 
 	#Set up an animation (Note, move to .scd files.)
 	ScummGame.characters["sissy"].Animations["fall"]=ScummPy.ScummPyAnimation.Animation(pygame.image.load("resources/animations/sissyfallsheet.png"), 100, 100, -8, 25, 8, 1, False)

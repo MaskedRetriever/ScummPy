@@ -73,6 +73,7 @@ class Game:
 			self.RoomSelect=ExitCheck.roomdest
 			self.characters[self.PlayerChar].GoTo(self.rooms[self.RoomSelect],ExitCheck.coords)
 			self.characters[self.PlayerChar].Update()
+			self.GameGUI.GUIText = ""
 		
 	
 	def Click(self, pos):
@@ -87,4 +88,7 @@ class Game:
 		GUIpoint = ScummPyUtils.GetIndex(self.imGUIMask.get_at(pos))
 		if GUIpoint == 1:
 			RoomPoint = ScummPyUtils.GetIndex(self.rooms[self.RoomSelect].imHotspots.get_at(pos))
-			self.GameGUI.GUIText = "GUI Area: " + str(GUIpoint) + " Hotspot: " + str(RoomPoint)
+			if RoomPoint in self.rooms[self.RoomSelect].HotSpots:
+				self.GameGUI.GUIText = self.rooms[self.RoomSelect].HotSpots[RoomPoint]
+			else:
+				self.GameGUI.GUIText = ""
