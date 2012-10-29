@@ -12,4 +12,4 @@ WalkLeftRow 3
 WalkRightRow 0
 WalkUpRow 2
 WalkDownRow 1
-FontFile font_2.png
+FontFile font_2

@@ -1,16 +1,16 @@
-Item 3 Look
-Item 4 Walk
-Item 5 Use
-Item 6 Open
-Item 8 Pickup
-Item 9 Push
-Item 10 Close
-Item 11 Give
-Item 12 Pull
-Item 14 Menu
-Item 13 Inv1
-Item 18 Inv2
-Item 20 Inv3
-Item 15 Inv4
-Item 19 Inv5
-Item 21 Inv6
+Action 3 Look
+Action 4 Walk
+Action2 5 Use with
+Action 6 Open
+Action 8 Pickup
+Action 9 Push
+Action 10 Close
+Action2 11 Give to
+Action 12 Pull
+Menu 14 SettingsMenu
+Item 13 1
+Item 18 2
+Item 20 3
+Item 15 4
+Item 19 5
+Item 21 6

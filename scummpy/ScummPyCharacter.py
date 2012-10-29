@@ -76,7 +76,7 @@ class Character:
 		self.Animations = dict()
 
 		#Speaking setup
-		self.TalkFont = Textify.BlitFont(ResourcePath + self.FontFile)
+		self.TalkFont = Textify.BlitFont(ResourcePath, self.FontFile)
 		self.SayString = ""
 		self.TicsToTalk = 0
 

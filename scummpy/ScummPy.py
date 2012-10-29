@@ -8,6 +8,7 @@ import ScummPyUtils
 import ScummPyCharacter
 import ScummPyHud
 import ScummPyAnimation
+import ScummPyEvent
 import Textify
 
 class Game:
@@ -29,6 +30,8 @@ class Game:
 
 		self.DebugDisplay = False
 	
+		#Command Queue
+		self.Commands = []
 
 		settingsFP = open(self.ResourcePath + "gamesettings.scd", "r")
 		for line in settingsFP:
@@ -43,7 +46,7 @@ class Game:
 				if words[0] == 'DebugFont':
 					self.FontFile = words[1]
 		settingsFP.close()      
-		self.DebugFont = Textify.BlitFont(ResourcePath + self.FontFile)
+		self.DebugFont = Textify.BlitFont(ResourcePath, self.FontFile)
 
 		self.RoomSelect=self.characters[self.PlayerChar].Startroom
 	
@@ -61,6 +64,7 @@ class Game:
 			DebugString1 = "X: " + str(int(self.characters[self.PlayerChar].x)) 
 			DebugString1 += " Y: " + str(int(self.characters[self.PlayerChar].y))
 			self.DebugFont.BlitText(surf,(1,1),DebugString1)
+			self.DebugFont.BlitText(surf,(1,11),self.GameGUI.State)
 			#surf.blit(self.characters[self.PlayerChar].imSheet,(200,0),self.characters[self.PlayerChar].blitRect)
 
 		
@@ -79,16 +83,35 @@ class Game:
 	def Click(self, pos):
 		point = ScummPyUtils.GetIndex(self.imGUIMask.get_at(pos))
 		if point == 1:
-			self.characters[self.PlayerChar].WalkTo(pos[0],pos[1])
-			#print pos
+			RoomPoint = ScummPyUtils.GetIndex(self.rooms[self.RoomSelect].imHotspots.get_at(pos))
+			if self.GameGUI.State == "inactive":
+				self.characters[self.PlayerChar].WalkTo(pos[0],pos[1])
+			else:
+				self.Commands.append(ScummPyEvent.Command(self.GameGUI.State,self.rooms[self.RoomSelect].HotSpots[RoomPoint]))
+				self.GameGUI.State = "inactive"
+
 		else:
-			self.GameGUI.GUIText = "Spot Clicked: " + str(point)
+			if point in self.GameGUI.Actions:
+				self.GameGUI.GUIText = self.GameGUI.Actions[point]
+				self.GameGUI.State = self.GameGUI.Actions[point]
+			if point in self.GameGUI.TwoNounActions:
+				self.GameGUI.GUIText = self.GameGUI.TwoNounActions[point]
 
 	def MouseOver(self,pos):
 		GUIpoint = ScummPyUtils.GetIndex(self.imGUIMask.get_at(pos))
 		if GUIpoint == 1:
 			RoomPoint = ScummPyUtils.GetIndex(self.rooms[self.RoomSelect].imHotspots.get_at(pos))
-			if RoomPoint in self.rooms[self.RoomSelect].HotSpots:
-				self.GameGUI.GUIText = self.rooms[self.RoomSelect].HotSpots[RoomPoint]
+			if self.GameGUI.State == "inactive":
+				if RoomPoint in self.rooms[self.RoomSelect].HotSpots:
+					self.GameGUI.GUIText = self.rooms[self.RoomSelect].HotSpots[RoomPoint]
+				else:
+					self.GameGUI.GUIText = ""
 			else:
-				self.GameGUI.GUIText = ""
+				if RoomPoint in self.rooms[self.RoomSelect].HotSpots:
+					self.GameGUI.GUIText = self.GameGUI.State + " " + self.rooms[self.RoomSelect].HotSpots[RoomPoint]
+				else:
+					self.GameGUI.GUIText = self.GameGUI.State
+
+		else:
+			if GUIpoint in self.GameGUI.Actions:
+				self.GameGUI.GUIText = self.GameGUI.Actions[GUIpoint]
