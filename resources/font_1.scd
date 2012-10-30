@@ -1,4 +1,4 @@
 Indicator 15
-YVal 20
-Height 10
+YVal 19
+Height 12
 Spacing 1
