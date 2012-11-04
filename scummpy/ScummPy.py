@@ -87,7 +87,8 @@ class Game:
 			if self.GameGUI.State == "inactive":
 				self.characters[self.PlayerChar].WalkTo(pos[0],pos[1])
 			else:
-				self.Commands.append(ScummPyEvent.Command(self.GameGUI.State,self.rooms[self.RoomSelect].HotSpots[RoomPoint]))
+				if RoomPoint != 0:
+					self.Commands.append(ScummPyEvent.Command(self.GameGUI.State,self.rooms[self.RoomSelect].HotSpots[RoomPoint]))
 				self.GameGUI.State = "inactive"
 
 		else:

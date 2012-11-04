@@ -49,8 +49,8 @@ class BlitFont:
 				cursor=cursor+4
 			else:
 				#charwidth=(self.LetterX[cha-32]-self.LetterX[cha-33])
-				charwidth=self.LetterXE[cha-32]-self.LetterX[cha-33]
-				imDest.blit(self.FontPlate,(xyDest[0]+cursor,xyDest[1]),Rect(self.LetterX[cha-33],self.YCaps,charwidth,self.Hs))
+				charwidth=self.LetterXE[cha-32]-self.LetterX[cha-32]+1
+				imDest.blit(self.FontPlate,(xyDest[0]+cursor,xyDest[1]),Rect(self.LetterX[cha-32],self.YCaps,charwidth,self.Hs))
 				cursor=cursor+charwidth
 
 	def BlitTextCenter(self, imDest, xyDest, text):
@@ -67,8 +67,8 @@ class BlitFont:
 				cursor=cursor+4
 			else:
 				#charwidth=(self.LetterX[cha-32]-self.LetterX[cha-33])
-				charwidth=self.LetterXE[cha-32]-self.LetterX[cha-33]
-				imTray.blit(self.FontPlate,(cursor,0),Rect(self.LetterX[cha-33],self.YCaps,charwidth,self.Hs))
+				charwidth=self.LetterXE[cha-32]-self.LetterX[cha-32]+1
+				imTray.blit(self.FontPlate,(cursor,0),Rect(self.LetterX[cha-32],self.YCaps,charwidth,self.Hs))
 				cursor=cursor+charwidth
 		imDest.blit(imTray,(xyDest[0]-(cursor/2),xyDest[1]))		
 		

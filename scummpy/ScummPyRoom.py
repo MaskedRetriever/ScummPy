@@ -31,7 +31,7 @@ class Room:
 			self.imLayers.append(pygame.image.load(self.ResourcePath + "rooms/" + RoomName + "/" + imName))
 		
 
-		#Set up exit hook (Designer must append exits from main!)
+		#Set up exit hook
 		self.Exits = [Exit()]
 
 		self.HotSpots = dict()
