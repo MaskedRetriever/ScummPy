@@ -11,7 +11,7 @@ import ScummPy
 
 
 
-GameScaleFactor = 2
+GameScaleFactor = 3
 
 wRect = (320,200)
 oRect = (int(320*GameScaleFactor),int(200*GameScaleFactor))
