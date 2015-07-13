@@ -8,9 +8,6 @@ import ScummPy
 
 
 
-
-
-
 GameScaleFactor = 2
 
 wRect = (320,200)
@@ -65,8 +62,6 @@ ScummGame.characters["sissy"].Animations["fall"]=ScummPy.ScummPyAnimation.Animat
 ScummGame.characters["sissy"].Animations["fall"].Running=True
 ScummGame.characters["sissy"].SheetY = ScummGame.characters["sissy"].WalkDownRow*ScummGame.characters["sissy"].SizeY
 going = True
-
-
 
 
 
