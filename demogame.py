@@ -57,7 +57,7 @@ pygame.init()
 ScummGame = ScummPy.Game()
 ScummGame.PlayerChar = 'sissy'
 
-ScummGame.DebugDisplay = True
+ScummGame.DebugDisplay = False
 #Set up an animation (Note, move to .scd files.)
 ScummGame.characters["sissy"].Animations["fall"]=ScummPy.ScummPyAnimation.Animation(pygame.image.load("resources/animations/sissyfallsheet.png"), 100, 100, -8, 25, 8, 1, False)
 
